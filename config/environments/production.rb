@@ -41,11 +41,8 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://instatalk.herokuapp.coom/cable'
-  config.action_cable.allowed_request_origins = [
-    'http://instatalk.herokuapp.coom/cable',
-    'https://instatalk.herokuapp.coom/cable'
-  ]
+  #config.action_cable.url = 'wss://62.217.178.72:81/cable'
+  config.action_cable.allowed_request_origins = ['http://62.217.178.72:81']
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -83,10 +80,16 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  #if ENV["RAILS_LOG_TO_STDOUT"].present?
+  #  logger           = ActiveSupport::Logger.new(STDOUT)
+  #  logger.formatter = config.log_formatter
+  # require 'syslog/logger'
+  # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+      config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
   # Do not dump schema after migrations.
