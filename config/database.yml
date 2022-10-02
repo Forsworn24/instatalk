@@ -25,7 +25,11 @@
 #  database: db/production.sqlite3
 
 production:
+  #adapter: postgresql
+  #user: deploy
+  #password: r901688
+  #database: myapp2
   adapter: postgresql
-  user: deploy
-  password: r901688
-  database: myapp2
+  user: <%= ENV['USER'] %>
+  password: <%= ENV['PASSWORD'] %>
+  database: <%= ENV['DATABASE'] %>
