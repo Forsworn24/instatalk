@@ -1,2 +1,0 @@
-class AddOnlineToUser < ApplicationRecord
-end
